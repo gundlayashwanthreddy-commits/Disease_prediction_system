@@ -1,64 +1,62 @@
-# Disease Prediction System
+Disease Prediction System — Week 2: Data Cleaning & Transformation
 
-**NSDC YuvaIntern — Virtual Data Science Apprentice (Python Specialist Intern)**
-4-Week Internship Project Documentation
+Week 2 deliverable for the Virtual Data Science Apprentice – Python Specialist Intern program (NSDC YuvaIntern). This week documents the data cleaning and transformation strategy for the UCI Heart Disease dataset.
 
-## Overview
 
-This repository contains the complete planning and strategy documentation for a **Disease Prediction System**, developed over a 4-week virtual data science internship. The project uses the **Pima Indians Diabetes Dataset** (a publicly available clinical dataset) to plan an end-to-end machine learning pipeline that predicts a patient's risk of diabetes based on clinical and demographic attributes.
 
-Each week's deliverable is a detailed Word document (`.docx`) covering a distinct stage of the data science lifecycle: project planning, data cleaning, exploratory data analysis, and machine learning model selection/evaluation.
+⚠️ Disclaimer: Educational/portfolio project only — not a medical diagnostic tool.
 
-> **Note:** This is a planning and documentation-focused academic project completed as part of an internship. It is not a validated clinical tool and is not intended for real-world medical diagnosis.
 
-## Repository Contents
 
-| File | Week | Description |
-|---|---|---|
-| `Week1_Project_Planning_Dataset_Scoping_DiseasePredictionSystem.docx` | 1 | Project proposal — objectives, scope, candidate datasets, high-level workflow |
-| `Week2_Data_Cleaning_Transformation_DiseasePredictionSystem.docx` | 2 | Data cleaning & transformation strategy — missing values, outliers, scaling, feature engineering |
-| `Week3_EDA_Visualization_Strategy_DiseasePredictionSystem.docx` | 3 | Exploratory Data Analysis (EDA) & visualization plan |
-| `Week4_ML_Model_Selection_Evaluation_DiseasePredictionSystem.docx` | 4 | Machine learning model selection, evaluation metrics, and validation strategy |
-| `README.md` | — | This file |
+Objective
 
-## Project Objective
+Document a Python-based plan for handling missing values, duplicates, outliers, and feature transformation to produce an analysis-ready dataset.
 
-To design and document a complete, reproducible Python-based data science workflow for predicting disease risk (diabetes) from patient health attributes — covering dataset selection, data preparation, exploratory analysis, and model evaluation planning.
 
-## Dataset
+Contents
 
-**Pima Indians Diabetes Dataset** (UCI Machine Learning Repository / Kaggle)
-- 768 records, 8 clinical/demographic features + binary target (`Outcome`)
-- Features: Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age
+week2-data-cleaning/
+├── Week2_Data_Cleaning_Transformation.docx   # Full cleaning & transformation plan
+└── README.md
 
-## Planned Workflow
+What's in the Report
 
-## Tools & Python Libraries (Planned)
 
-- **Data handling:** pandas, numpy
-- **Visualization:** matplotlib, seaborn, plotly (optional)
-- **Modeling:** scikit-learn
-- **Imbalanced data:** imbalanced-learn (SMOTE)
-- **Environment:** Jupyter Notebook
+Data quality profiling approach (nulls, sentinel placeholder values, duplicates, invalid ranges)
 
-## Weekly Breakdown
+Missing value strategy: median/mode imputation, KNNImputer, row removal thresholds
 
-### Week 1 — Project Planning and Dataset Scoping
-Defines the problem statement, project objectives, anticipated challenges, dataset comparison and selection rationale, and a high-level analytical workflow with validation checkpoints.
+Duplicate detection and removal (pandas.drop_duplicates)
 
-### Week 2 — Data Cleaning and Transformation Documentation
-Documents the strategy for handling disguised missing values, duplicates, outliers, feature scaling, feature engineering, and class-imbalance handling using pandas and numpy.
+Outlier detection: IQR method, z-score method, box-plot confirmation
 
-### Week 3 — Exploratory Data Analysis and Visualization Strategy
-Outlines the univariate, bivariate, and multivariate visualization plan (histograms, box plots, violin plots, correlation heatmaps, pair plots) used to uncover patterns and guide feature selection, using matplotlib and seaborn.
+Encoding plan: label encoding (binary fields) and one-hot encoding (nominal fields)
 
-### Week 4 — Machine Learning Model Selection and Evaluation Plan
-Compares candidate algorithms (Logistic Regression, Decision Tree, Random Forest, SVM, KNN, Gradient Boosting, Neural Network), defines evaluation metrics (Accuracy, Precision, Recall, F1-score, ROC-AUC), and describes the cross-validation and hyperparameter tuning strategy.
+Feature scaling: StandardScaler, applied strictly after the train/test split to avoid leakage
 
-## Author
+Two proposed engineered features (age-group bucket, cholesterol × blood pressure interaction)
 
-Submitted as part of the **NSDC YuvaIntern** — *Virtual Data Science Apprentice: Python Specialist Intern* program.
+An 8-step repeatable cleaning pipeline
 
-## License
+Risk table covering leakage prevention and over-aggressive outlier removal
 
-This repository is provided for educational and internship-evaluation purposes only.
+
+Tools
+
+pandas, numpy, scikit-learn (KNNImputer, StandardScaler, OneHotEncoder)
+
+
+Depends On
+
+Week 1 project plan and dataset selection.
+
+
+Next Step
+
+Week 3 will use the cleaned dataset for exploratory data analysis and visualization.
+
+
+Author
+
+[Your Name] — Virtual Data Science Apprentice, NSDC YuvaIntern
+
