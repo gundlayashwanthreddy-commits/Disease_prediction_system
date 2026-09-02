@@ -1,6 +1,6 @@
-Disease Prediction System — Week 2: Data Cleaning & Transformation
+Disease Prediction System — Week 3: EDA & Visualization Strategy
 
-Week 2 deliverable for the Virtual Data Science Apprentice – Python Specialist Intern program (NSDC YuvaIntern). This week documents the data cleaning and transformation strategy for the UCI Heart Disease dataset.
+Week 3 deliverable for the Virtual Data Science Apprentice – Python Specialist Intern program (NSDC YuvaIntern). This week sets out the exploratory data analysis and visualization strategy applied to the cleaned dataset.
 
 
 
@@ -10,50 +10,48 @@ Week 2 deliverable for the Virtual Data Science Apprentice – Python Specialist
 
 Objective
 
-Document a Python-based plan for handling missing values, duplicates, outliers, and feature transformation to produce an analysis-ready dataset.
+Explore feature distributions, class balance, and feature-target relationships to surface insights that will guide model selection in Week 4.
 
 
 Contents
 
-week2-data-cleaning/
-├── Week2_Data_Cleaning_Transformation.docx   # Full cleaning & transformation plan
+week3-eda/
+├── Week3_EDA_Visualization_Strategy.docx   # Full EDA & visualization plan
 └── README.md
 
 What's in the Report
 
 
-Data quality profiling approach (nulls, sentinel placeholder values, duplicates, invalid ranges)
+Univariate analysis: histograms + KDE, box plots (numeric features); count plots (categorical features)
 
-Missing value strategy: median/mode imputation, KNNImputer, row removal thresholds
+Bivariate/multivariate analysis: grouped box plots and bar charts of features vs. disease outcome
 
-Duplicate detection and removal (pandas.drop_duplicates)
+Correlation heatmap to flag multicollinearity
 
-Outlier detection: IQR method, z-score method, box-plot confirmation
+Pair plot (curated feature subset) colored by target class
 
-Encoding plan: label encoding (binary fields) and one-hot encoding (nominal fields)
+Class balance check on the target variable
 
-Feature scaling: StandardScaler, applied strictly after the train/test split to avoid leakage
+A visualization-to-insight mapping table tying each plot to a specific downstream modelling decision
 
-Two proposed engineered features (age-group bucket, cholesterol × blood pressure interaction)
+Domain hypotheses to validate (e.g., age and cholesterol vs. risk, max heart rate inverse relationship)
 
-An 8-step repeatable cleaning pipeline
-
-Risk table covering leakage prevention and over-aggressive outlier removal
+7-step implementation plan for generating and documenting plots
 
 
 Tools
 
-pandas, numpy, scikit-learn (KNNImputer, StandardScaler, OneHotEncoder)
+pandas, matplotlib, seaborn
 
 
 Depends On
 
-Week 1 project plan and dataset selection.
+Week 2 cleaned and transformed dataset.
 
 
 Next Step
 
-Week 3 will use the cleaned dataset for exploratory data analysis and visualization.
+Week 4 will use these insights to inform model selection and feature importance interpretation.
 
 
 Author
