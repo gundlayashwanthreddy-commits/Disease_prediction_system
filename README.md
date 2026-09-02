@@ -1,6 +1,6 @@
-Disease Prediction System — Week 3: EDA & Visualization Strategy
+Disease Prediction System — Week 4: ML Model Selection & Evaluation
 
-Week 3 deliverable for the Virtual Data Science Apprentice – Python Specialist Intern program (NSDC YuvaIntern). This week sets out the exploratory data analysis and visualization strategy applied to the cleaned dataset.
+Week 4 deliverable for the Virtual Data Science Apprentice – Python Specialist Intern program (NSDC YuvaIntern). This is the final week, covering model selection, training, and evaluation.
 
 
 
@@ -10,48 +10,46 @@ Week 3 deliverable for the Virtual Data Science Apprentice – Python Specialist
 
 Objective
 
-Explore feature distributions, class balance, and feature-target relationships to surface insights that will guide model selection in Week 4.
+Select, train, and evaluate classification models to predict heart disease risk, and choose a final model balancing performance and interpretability.
 
 
 Contents
 
-week3-eda/
-├── Week3_EDA_Visualization_Strategy.docx   # Full EDA & visualization plan
+week4-modeling/
+├── Week4_ML_Model_Selection_Evaluation.docx   # Full model selection & evaluation plan
 └── README.md
 
 What's in the Report
 
 
-Univariate analysis: histograms + KDE, box plots (numeric features); count plots (categorical features)
+Candidate models compared: Logistic Regression, Decision Tree, Random Forest, SVM, KNN
 
-Bivariate/multivariate analysis: grouped box plots and bar charts of features vs. disease outcome
+Model selection criteria: performance, interpretability, robustness, compute cost, scaling sensitivity
 
-Correlation heatmap to flag multicollinearity
+Evaluation metrics: accuracy, precision, recall, F1, ROC-AUC, confusion matrix — with recall weighted heavily given the cost of missing an at-risk patient
 
-Pair plot (curated feature subset) colored by target class
+Validation strategy: 80/20 stratified split, 5-fold stratified cross-validation, GridSearchCV tuning, single untouched final test evaluation
 
-Class balance check on the target variable
+8-step process from baseline model through final selection and feature-importance analysis
 
-A visualization-to-insight mapping table tying each plot to a specific downstream modelling decision
+Trade-off table (e.g., Random Forest performance vs. Logistic Regression interpretability)
 
-Domain hypotheses to validate (e.g., age and cholesterol vs. risk, max heart rate inverse relationship)
-
-7-step implementation plan for generating and documenting plots
+Deliverables: comparison table, final model with justification, feature importance summary, limitations discussion
 
 
 Tools
 
-pandas, matplotlib, seaborn
+scikit-learn (LogisticRegression, DecisionTreeClassifier, RandomForestClassifier, SVC, KNeighborsClassifier, GridSearchCV, metrics module)
 
 
 Depends On
 
-Week 2 cleaned and transformed dataset.
+Week 2 cleaned dataset and Week 3 EDA insights.
 
 
-Next Step
+Outcome
 
-Week 4 will use these insights to inform model selection and feature importance interpretation.
+Final selected model with a documented, metric-driven justification — completing the 4-week Disease Prediction System project.
 
 
 Author
